@@ -94,20 +94,3 @@ services:
     ports:
       - "25565:25565"
     restart: unless-stopped
-
-  backups:
-    image: itzg/mc-backup
-    environment:
-      # Minecraft server backups interval (replace with yours)
-      BACKUP_INTERVAL: 23h
-      # Minecraft server backups prune interval (replace with yours)
-      PRUNE_BACKUPS_DAYS: 7
-    volumes:
-    - minecraft-data:/data:ro
-    # Minecraft backups location
-    - /srv/minecraft-data/backups:/backups
-    network_mode: 'service:minecraft'
-    restart: unless-stopped
-    depends_on:
-      minecraft:
-        condition: service_healthy
