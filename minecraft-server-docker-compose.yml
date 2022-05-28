@@ -31,7 +31,6 @@ services:
     image: itzg/minecraft-server
     volumes:
       - minecraft-data:/data
-      - ./mods:/mods:ro
     environment:
       EULA: 'true'
       CONSOLE: 'false'
