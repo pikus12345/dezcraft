@@ -28,7 +28,7 @@ volumes:
 
 services:
   minecraft:
-    image: syntez/minecraft-server
+    image: itzg/minecraft-server
     volumes:
       - minecraft-data:/data
       - ./mods:/mods:ro
@@ -96,7 +96,7 @@ services:
     restart: unless-stopped
 
   backups:
-    image: syntez/mc-backup
+    image: itzg/mc-backup
     environment:
       # Minecraft server backups interval (replace with yours)
       BACKUP_INTERVAL: 23h
